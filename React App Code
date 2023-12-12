@@ -1,0 +1,256 @@
+import React, { Component } from 'react';
+import { AppRegistry, Text, View, StyleSheet, TouchableHighlight, TextInput, Image, ImageBackground, Alert, Dimensions } from 'react-native';
+import Constants from 'expo-constants';
+
+let deviceHeight = Dimensions.get('window').height;
+let deviceWidth = Dimensions.get('window').width;
+
+export default class App extends Component {
+    state = {
+// textInput variables here
+        
+    };
+
+    _handleButtonPress = () => {
+        Alert.alert(
+            'Button pressed!',
+            'You did it!',
+        );
+    };
+
+    render() {
+        return (
+            <View style={styles.container}>
+                <View style={styles.calenderBox}>
+                    <TouchableHighlight
+                        onPress={() => {
+                            alert('Alert Message!')
+                        }}
+                    >
+                        <Text style={styles.dia}>
+                            Sat
+                        </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={() => {
+                            alert('Alert Message!')
+                        }}
+                    >
+                        <Text style={styles.dia}>
+                            Sun
+                        </Text>
+                    </TouchableHighlight><TouchableHighlight
+                        onPress={() => {
+                            alert('Alert Message!')
+                        }}
+                    >
+                        <Text style={styles.dia}>
+                            Mon
+                        </Text>
+                    </TouchableHighlight><TouchableHighlight
+                        onPress={() => {
+                            alert('Alert Message!')
+                        }}
+                    >
+                        <Text style={styles.dia}>
+                            Tue
+                        </Text>
+                    </TouchableHighlight><TouchableHighlight
+                        onPress={() => {
+                            alert('Alert Message!')
+                        }}
+                    >
+                        <Text style={styles.dia}>
+                            Wed
+                        </Text>
+                    </TouchableHighlight>
+                </View>
+                <View style={styles.timeBox}>
+                    <View style={{flex:1}}>
+                        <Text style={styles.reps}>
+                            Squats
+                        </Text>
+                        <Image
+                            source={{ uri: 'https://codehs.com/uploads/4099065fcf103c5bebf231260a4a8bca' }}
+                            style={styles.exercisePic}
+                        />
+                        <Text style={styles.reps}>
+                            3 x 8
+                        </Text>
+                    </View>
+                    <View style={{flex:1,alignItems:'center'}}>
+                        <Text style={styles.time}>
+                            0:38
+                        </Text>
+                        
+                        <TouchableHighlight
+                            onPress={() => {
+                                alert('Alert Message!')
+                            }}
+                        >
+                            <View style={{height: deviceHeight * 0.11,width: deviceWidth * 0.40,borderWidth: 1, marginTop: deviceHeight * 0.05, borderRadius: 12, justifyContent: 'center', alignItems: 'center'}}>
+                                <Text style={styles.pause}>
+                                    Pause
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                </View>
+                <View style={styles.workoutBox}>
+                    <View style={styles.workoutActive}>
+                        <Text style={styles.workoutText}>
+                            Barbell Squat:  3 x 6-8
+                        </Text>
+                    </View>
+                    <View style={styles.workout}>
+                        <Text style={styles.workoutText}>
+                            Nordic Curl 3 x 12-16
+                        </Text>
+                    </View>
+                    <View style={styles.workout}>
+                        <Text style={styles.workoutText}>
+                            Leg Press 3 x 18-24
+                        </Text>
+                    </View>
+                    <View style={styles.workout}>
+                        <Text style={styles.workoutText}>
+                            Calf Raise 2 x 20
+                        </Text>
+                    </View>
+                    <View style={styles.workout}>
+                        <Text style={styles.workoutText}>
+                            Romanian Deadlift 3 x 6-8
+                        </Text>
+                    </View>
+                    <View style={styles.buttonsBox}>
+                        <TouchableHighlight
+                            onPress={() => {
+                                alert('Alert Message!')
+                            }}
+                        >
+                            <View style={styles.button}>
+                                <Text style={styles.buttonText}>
+                                    Begin Workout
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                        <TouchableHighlight
+                            onPress={() => {
+                                alert('Alert Message!')
+                            }}
+                        >
+                            <View style={styles.button}>
+                                <Text style={styles.buttonText}>
+                                    Edit Workout
+                                </Text>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+                </View>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex:1,
+        alignItems: 'center',
+    },
+    calenderBox:{
+      height: deviceHeight * 0.05,
+      width: deviceWidth * 0.9,
+      borderWidth: 1,
+      flexDirection: 'row',
+      alignItems:'center',
+      justifyContent: 'center',
+      marginTop: deviceHeight * 0.02,
+
+    },
+    dia: {
+      height: deviceHeight * 0.04,
+      width: deviceWidth * 0.11,
+      margin: deviceWidth * 0.03,
+      textAlign: 'center',
+      fontSize: deviceHeight * 0.025,
+    },
+    timeBox:{
+        height: deviceHeight * 0.3,
+        width: deviceWidth * 0.9,
+        borderWidth: 1,
+        borderRadius: 10,
+        marginTop: deviceHeight * 0.01,
+        flexDirection: 'row',
+    },
+    reps:{
+        fontSize: deviceHeight * 0.035,
+        height: deviceWidth * 0.04,
+        width: deviceWidth * 0.45,
+        textAlign: 'center',
+    },
+    exercisePic:{
+        height: deviceWidth * 0.40,
+        width: deviceWidth * 0.40,
+    },
+    time:{
+        fontSize: deviceHeight * 0.1,
+        textAlign: 'center',
+        height: deviceHeight * 0.11,
+        width: deviceWidth * 0.45,
+    },
+    pause:{
+        fontSize: deviceHeight * 0.06,
+        textAlign: 'center',
+    },
+    workoutBox:{
+        height: deviceHeight * 0.55,
+        width: deviceWidth * 0.9,
+        borderWidth: 1,
+        marginTop: deviceHeight * 0.02,
+        borderRadius: 10,
+        backgroundColor: 'black',
+    },
+    workoutActive:{
+        backgroundColor: '#e8e8e8',
+        height: deviceHeight * 0.0916,
+        width: deviceWidth * 0.9 - 2,
+        borderRadius: 10,
+        marginTop: 1,
+    },
+    workout:{
+        height: deviceHeight * 0.0916,
+        width: deviceWidth * 0.9 - 2,
+        borderRadius: 10,
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
+        backgroundColor: 'white',
+    },
+    workoutText:{
+        fontSize: deviceHeight * 0.03,
+        marginTop: deviceHeight * 0.023,
+        marginBottom: deviceHeight * 0.021,
+        marginLeft: deviceWidth * 0.02
+    },
+    buttonsBox:{
+        height: deviceHeight * 0.0916,
+        width: deviceWidth * 0.9 - 2,
+        borderRadius: 10,
+        borderBottomWidth: 1,
+        borderTopWidth: 1,
+        flexDirection: 'row',
+    },
+    button:{
+        height: deviceHeight * 0.0916-1,
+        width: deviceWidth * 0.45 - 1,
+        borderRadius: 10,
+        backgroundColor: '#e8e8e8',
+        borderWidth:1,
+    },
+    buttonText: {
+        fontSize: deviceHeight * 0.03,
+        marginTop: deviceHeight * 0.023,
+        marginBottom: deviceHeight * 0.021,
+        marginLeft: deviceWidth * 0.02,
+        textAlign: 'center'
+    },
+});
